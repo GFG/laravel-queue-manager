@@ -9,7 +9,7 @@ It also has a scheduler system built-in.
 
 ### Composer
 ```bash
-$ composer require pierophp/laravel-queue-manager
+$ composer require gfg/laravel-queue-manager
 ```
 
 ### Publish
