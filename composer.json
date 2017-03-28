@@ -1,5 +1,5 @@
 {
-  "name": "GFG/laravel-queue-manager",
+  "name": "gfg/laravel-queue-manager",
   "description": "Laravel Queue Manager",
   "license": "MIT",
   "keywords": ["laravel", "queue", "queue-manager", "supervisor"],
