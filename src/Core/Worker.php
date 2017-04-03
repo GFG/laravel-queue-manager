@@ -82,7 +82,18 @@ class Worker extends LaravelWorker
         }
 
         if ($response->status_code != 200) {
-            throw new \Exception($response->error_description, $response->error_code);
+
+            $errorMessage = 'Server return ' . $response->status_code . ' HTTP error code';
+            if (isset($response->error_description)) {
+                $errorMessage = $response->error_description;
+            }
+
+            $errorCode = 500;
+            if (isset($response->error_code)) {
+                $errorCode = $response->error_code;
+            }
+
+            throw new \Exception($errorMessage, $errorCode);
         }
 
         if (! $job->isDeletedOrReleased()) {
