@@ -9,7 +9,7 @@ It also has a scheduler system built-in.
 
 ### Composer
 ```bash
-$ composer require gfg/laravel-queue-manager
+$ composer require dafiti/laravel-queue-manager
 ```
 
 ### Publish
