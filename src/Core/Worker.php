@@ -68,6 +68,7 @@ class Worker extends LaravelWorker
         $curlResponse = curl_exec($ch);
 
         $curlErrorCode = curl_errno($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         curl_close($ch);
 
@@ -83,7 +84,7 @@ class Worker extends LaravelWorker
 
         if ($response->status_code != 200) {
 
-            $errorMessage = 'Server return ' . $response->status_code . ' HTTP error code';
+            $errorMessage = 'Server return ' . $httpcode . ' HTTP error code AND ' . $response->status_code . ' error code';
             if (isset($response->error_description)) {
                 $errorMessage = $response->error_description;
             }
